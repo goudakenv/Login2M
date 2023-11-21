@@ -9,25 +9,35 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>掲示板</title>
+<title>プロフィール</title>
 </head>
 <body>
-	<h1>掲示板</h1>
+	<h1>プロフィール</h1>
 	<form action="" method="post">
-		ユーザー名: <input type="text" name="username" required><br>
-		メッセージ:
+		ネーム: <input type="text" name="username" required><br>
+				 
+
+		
+		メッセージ<br>
 		<textarea name="message" rows="4" cols="50" required></textarea>
-		<br> <input type="submit" value="投稿">
+		<br> 
+		
+		<input type="submit" value="送信">
+		
 	</form>
+	
+	
 	
 	<hr>
 	
 	${user.loginId }
-		<form action="/LoginBB/item/out" method="post">
+		<form action="/Login2M/item/out" method="post">
 		<input type="submit" value="ログアウト" />
 	</form>
 	
-	<h2>投稿一覧</h2>
+	
+	
+	<h2>プロフィール一覧</h2>
 
 
 
@@ -45,9 +55,14 @@
 	<p>
 		番号:
 		<%=post.getId()%></p>
+		
 			<p>
-		ユーザーネーム:
+		ネーム:
 		<%=post.getUsername()%></p>
+		
+		
+		
+		
 	<p>
 		メッセージ:
 		<%=post.getMessage()%></p>

@@ -37,9 +37,15 @@ public class PostServlet extends HttpServlet {
         String username = request.getParameter("username");
         String message = request.getParameter("message");
 
+        
+        
+
         Post post = new Post();
         post.setUsername(username);
         post.setMessage(message);
+
+        
+        
 
         PostDAO postDao = new PostDAO();
         postDao.addPost(post);
