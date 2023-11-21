@@ -33,6 +33,7 @@ public class PostDAO {
                 Post post = new Post();
                 post.setId(resultSet.getInt("id"));
                 post.setUsername(resultSet.getString("username"));
+                post.setName(resultSet.getString("name"));
                 post.setMessage(resultSet.getString("message"));
                 post.setCreatedAt(resultSet.getTimestamp("created_at"));
                 posts.add(post);
@@ -45,13 +46,15 @@ public class PostDAO {
     }
 
     public void addPost(Post post) {
-        String query = "INSERT INTO posts (username, message) VALUES (?, ?)";
+        String query = "INSERT INTO posts (username, message, name) VALUES (?, ?, ?)";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
         	System.out.println(post.getUsername());
+        	System.out.println(post.getName());
         	System.out.println(post.getMessage());
             preparedStatement.setString(1, post.getUsername());
             preparedStatement.setString(2, post.getMessage());
+            preparedStatement.setString(3, post.getName());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -14,9 +14,10 @@
 <body>
 	<h1>プロフィール</h1>
 	<form action="" method="post">
+	
 		ネーム: <input type="text" name="username" required><br>
 				 
-
+趣味: <input type="text" name="name" required><br>
 		
 		メッセージ<br>
 		<textarea name="message" rows="4" cols="50" required></textarea>
@@ -60,7 +61,9 @@
 		ネーム:
 		<%=post.getUsername()%></p>
 		
-		
+	<p>
+		趣味:
+		<%=post.getUsername()%></p>
 		
 		
 	<p>

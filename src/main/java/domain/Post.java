@@ -6,6 +6,7 @@ import java.util.Date;
 public class Post {
     private int id;
     private String username;
+    private String name;
     private String message;
     private Date createdAt;
 
@@ -13,8 +14,9 @@ public class Post {
     public Post() {
     }
 
-    public Post(String username, String message) {
+    public Post(String username, String name, String message) {
         this.username = username;
+        this.name = name;
         this.message = message;
     }
 
@@ -34,6 +36,18 @@ public class Post {
     public void setUsername(String username) {
         this.username = username;
     }
+    
+    
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    
 
     public String getMessage() {
         return message;
