@@ -18,6 +18,8 @@
 		ネーム: <input type="text" name="username" required><br>
 				 
 趣味: <input type="text" name="name" required><br>
+
+要望: <input type="text" name="age" required><br>
 		
 		メッセージ<br>
 		<textarea name="message" rows="4" cols="50" required></textarea>
@@ -63,8 +65,11 @@
 		
 	<p>
 		趣味:
-		<%=post.getUsername()%></p>
+		<%=post.getName()%></p>
 		
+		<p>
+		要望:
+		<%=post.getAge()%></p>
 		
 	<p>
 		メッセージ:

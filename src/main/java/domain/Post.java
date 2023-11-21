@@ -7,6 +7,7 @@ public class Post {
     private int id;
     private String username;
     private String name;
+    private String age;
     private String message;
     private Date createdAt;
 
@@ -14,9 +15,10 @@ public class Post {
     public Post() {
     }
 
-    public Post(String username, String name, String message) {
+    public Post(String username, String name, String message, String age) {
         this.username = username;
         this.name = name;
+        this.name = age;
         this.message = message;
     }
 
@@ -46,6 +48,23 @@ public class Post {
     public void setName(String name) {
         this.name = name;
     }
+    
+    
+    
+    
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+    
+    
+    
+    
+    
     
     
 

@@ -34,6 +34,7 @@ public class PostDAO {
                 post.setId(resultSet.getInt("id"));
                 post.setUsername(resultSet.getString("username"));
                 post.setName(resultSet.getString("name"));
+                post.setAge(resultSet.getString("age"));
                 post.setMessage(resultSet.getString("message"));
                 post.setCreatedAt(resultSet.getTimestamp("created_at"));
                 posts.add(post);
@@ -46,7 +47,7 @@ public class PostDAO {
     }
 
     public void addPost(Post post) {
-        String query = "INSERT INTO posts (username, message, name) VALUES (?, ?, ?)";
+        String query = "INSERT INTO posts (username, message, name, age) VALUES (?, ?, ?, ?)";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
         	System.out.println(post.getUsername());
@@ -55,6 +56,7 @@ public class PostDAO {
             preparedStatement.setString(1, post.getUsername());
             preparedStatement.setString(2, post.getMessage());
             preparedStatement.setString(3, post.getName());
+            preparedStatement.setString(4, post.getAge());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

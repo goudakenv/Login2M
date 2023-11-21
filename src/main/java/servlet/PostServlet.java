@@ -37,13 +37,15 @@ public class PostServlet extends HttpServlet {
         String username = request.getParameter("username");
         String message = request.getParameter("message");
         String name = request.getParameter("name");
-        
+        String age = request.getParameter("age");
+
         
 
         Post post = new Post();
         post.setUsername(username);
         post.setMessage(message);
         post.setName(name);
+        post.setAge(age);
 
         
         
